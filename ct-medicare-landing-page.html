@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="android-chrome-512x512 (1).png" />
+<title>Medicare Help in Connecticut — Talk to a Licensed Sales Agent</title>
+
+<!--
+  ============================================================
+  FILES: keep these three together in the same folder, plus your photo:
+    ct-medicare-landing-page.html
+    styles.css
+    form.js
+    IMG_1790.JPG     (your headshot)
+
+  BEFORE YOU PUBLISH — search each file for CHANGE-ME and fill in:
+    1. YOUR PHOTO   — swap the placeholder for your real headshot (this file).
+    2. YOUR NAME    — under the photo and in the success message (this file).
+    3. YOUR PHONE   — the "prefer to call" link and success message (this file).
+    4. PLAN COUNT   — Anthem's plan count for your CT service area (this file).
+    5. WEBHOOK URL  — your Zapier "Catch Hook" URL (in form.js).
+
+  Organization count is already set to "1 organization" (Anthem).
+  Have Anthem's compliance team approve the wording before you post the link.
+  ============================================================
+-->
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+
+      <form id="lead-form" novalidate>
+
+        <div class="hero">
+          <img class="photo" src="IMG_1790.JPG" alt="Jacqueline Delgado, licensed Medicare sales agent" />
+
+          <p class="agent-name">Jacqueline Delgado</p>
+          <p class="agent-cred">Licensed sales agent &middot; Connecticut</p>
+
+          <p class="eyebrow">New to Medicare in Connecticut?</p>
+          <h1>Have questions about your Medicare options?</h1>
+          <p class="sub">Talk with a local licensed sales agent who can answer your questions &mdash; including if you qualified for Medicare before age 65.</p>
+
+          <p class="callnote">Prefer to call? <a href="tel:+18602359365">(860) 235-9365</a></p>
+        </div>
+
+        <hr class="divider" />
+
+        <p class="form-head">Request a call</p>
+        <p class="form-sub">Fill this out and a licensed sales agent will call you back.</p>
+
+        <div class="row">
+          <div class="field">
+            <label id="first-label" for="first">First name</label>
+            <input type="text" id="first" name="first_name" autocomplete="given-name" required />
+          </div>
+          <div class="field">
+            <label id="last-label" for="last">Last name</label>
+            <input type="text" id="last" name="last_name" autocomplete="family-name" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label id="phone-label" for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(860) 235-9365" required />
+        </div>
+
+        <div class="field">
+          <label id="email-label" for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="name@email.com" />
+        </div>
+
+        <div class="field">
+          <label id="street-label" for="street">Mailing address <span class="opt">(optional)</span></label>
+          <input type="text" id="street" name="street" autocomplete="address-line1" placeholder="Street address" />
+        </div>
+
+        <div class="row">
+          <div class="field field--city">
+            <label id="city-label" for="city">City</label>
+            <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="New Haven" />
+          </div>
+          <div class="field field--state">
+            <label id="state-label" for="state">State</label>
+            <input type="text" id="state" name="state" autocomplete="address-level1" value="CT" />
+          </div>
+          <div class="field field--zip">
+            <label id="zip-label" for="zip">ZIP code</label>
+            <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="06510" required />
+          </div>
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" required />
+          <label id="consent-label" for="consent">By checking this box I'm requesting that a licensed sales agent contact me about my Medicare options by phone, and I understand my information will be provided to a licensed sales agent for that purpose.</label>
+        </div>
+
+        <button type="submit" id="submit-btn">Request a call</button>
+        <p class="err hidden" id="error-msg" role="alert"></p>
+
+        <div class="legal">
+          <!-- CHANGE-ME: replace [PLAN COUNT] with your Anthem CT plan count -->
+          <p><span class="lbl">Disclaimer &mdash;</span> We do not offer every plan available in your area. Currently we represent 1 organization which offers [PLAN COUNT] products in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.</p>
+          <p>Not connected with or endorsed by the U.S. government or the federal Medicare program.</p>
+        </div>
+      </form>
+
+      <div class="success hidden" id="success">
+        <div class="check">&#10003;</div>
+        <h2>Thank you &mdash; request received.</h2>
+        <p>A licensed sales agent will call you shortly. To reach us sooner, call Jacqueline Delgado at (860) 235-9365.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="form.js" defer></script>
+</body>
+</html>
